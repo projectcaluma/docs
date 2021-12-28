@@ -1,24 +1,52 @@
 # Table of contents
 
-* [CHANGELOG](README.md)
-* [Contributing](contributing.md)
-* [README](readme.md)
-* [docs](docs/README.md)
-  * [Calculated Questions](docs/calculated-questions.md)
+## Introduction
+
+* [What is Caluma?](README.md)
+* [Evaluating Caluma](introduction/evaluating-caluma/README.md)
+  * [The story behind Caluma](introduction/evaluating-caluma/the-story-behind-caluma.md)
+  * [What problems does Caluma solve?](introduction/evaluating-caluma/what-problems-does-caluma-solve.md)
+  * [Technical architecture](introduction/evaluating-caluma/technical-architecture.md)
+  * [What skills are needed to build an application using Caluma?](introduction/evaluating-caluma/what-skills-are-needed-to-build-an-application-using-caluma.md)
+  * [How can Caluma be integrated in an existing technical landscape?](introduction/evaluating-caluma/how-can-caluma-be-integrated-in-an-existing-technical-landscape.md)
+
+## Guides
+
+* [Getting started](guides/guide.md)
+* [Workflow](guides/workflow-concepts/README.md)
+  * [Concepts](guides/workflow-concepts/concepts.md)
+  * [Implementation](guides/workflow-concepts/workflow-implementation.md)
+
+## Forms
+
+* [Form validation](forms/validation.md)
+* [Calculated Questions](forms/calculated-questions.md)
+* [Entities](forms/entities.md)
+* [Data sources](forms/data-sources.md)
+* [Format validators](forms/format-validators.md)
+
+## Workflow
+
+* [WorkItem assignments](workflow/workflow-workitem-assignments.md)
+* [Dynamic groups](workflow/dynamic-groups.md)
+* [Dynamic tasks](workflow/dynamic-tasks.md)
+
+## General
+
+***
+
+* [Extension points](extending/README.md)
+  * [Visibilities](extending/visibilities.md)
+  * [Permissions](extending/permissions.md)
+  * [Validations](extending/validations.md)
+  * [Events](extending/events.md)
+* [Extras](docs/README.md)
   * [Commands](docs/commands.md)
   * [Configuration](docs/configuration.md)
   * [Using Caluma as django apps](docs/django-apps.md)
-  * [Entities](docs/entities.md)
-  * [Caluma Events](docs/events.md)
-  * [Extension points](docs/extending.md)
   * [GraphQL](docs/graphql.md)
-  * [Caluma: Guide](docs/guide.md)
   * [Healthz Endpoint](docs/healthz.md)
   * [Historical Records](docs/historical-records.md)
   * [Interfaces](docs/interfaces.md)
   * [Javascript Expression Language](docs/jexl.md)
-  * [Maintainer's Handbook](docs/maintainers.md)
-  * [Validation](docs/validation.md)
-  * [Caluma Guide: Workflow](docs/workflow-concepts.md)
-  * [2. Implementation](docs/workflow-implementation.md)
-  * [Workflow WorkItem assignments](docs/workflow-workitem-assignments.md)
+  * [OIDC User factory](docs/oidc-user-factory.md)

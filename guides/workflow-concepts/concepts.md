@@ -1,8 +1,4 @@
-# Caluma Guide: Workflow
-
-This guide explains the most important aspects of the _workflow_ capabilities of Caluma. First, we'll look at the concepts the workflow system is based on, and after at how these concepts can be applied in practice by using Caluma's GraphQL API.
-
-## Concepts
+# Concepts
 
 When thinking about workflows, it helps to differentiate between two different steps of a workflow's lifecycle:
 
@@ -11,11 +7,11 @@ When thinking about workflows, it helps to differentiate between two different s
 
 The following picture summarizes the relationship between the various workflow entities and the phases they are concerned with:
 
-![Workflow entities diagram](../.gitbook/assets/workflow-entities.svg)
+![Workflow entities diagram](../../.gitbook/assets/workflow-entities.svg)
 
 In order to illustrate how the workflow entities are used, let's imagine a simple workflow that describes an exam in a school:
 
-![Exam workflow with two tasks](../.gitbook/assets/exam-design.svg)
+![Exam workflow with two tasks](../../.gitbook/assets/exam-design.svg)
 
 The "exam" workflow states that every exam consists of two steps:
 
@@ -28,17 +24,17 @@ Now that we know about the workflow's design, let's imagine this workflow being 
 
 1.  When a new "exam" case is started, Caluma creates a new "fill out exam" work item.
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-1.svg)
+    ![Exam case with one work item](../../.gitbook/assets/exam-execution-1.svg)
 2.  The exam is filled out, and the corresponding work item is completed. Caluma creates a new work item for the "correct exam" task.
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-2.svg)
+    ![Exam case with one work item](../../.gitbook/assets/exam-execution-2.svg)
 3.  The exam is corrected, and just as before the corresponding work item is completed. Since there are no more tasks following in the workflow's design, the whole case is marked as "complete".
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-3.svg)
+    ![Exam case with one work item](../../.gitbook/assets/exam-execution-3.svg)
 
 The separation of _Design_ and _Execution_ allows having many "exam" cases in different states at the same time:
 
-![Three exam cases in different states](../.gitbook/assets/exam-execution-4.svg)
+![Three exam cases in different states](../../.gitbook/assets/exam-execution-4.svg)
 
 Most workflows needed in real applications are more complex than the "exam" workflow we looked at in this example. To handle complex workflows, more building blocks are needed. The building blocks for workflows are called _Worfklow Patterns_, and you'll find all the patterns which are supported in Caluma in the docs (currently WIP).
 

@@ -48,7 +48,7 @@ If you wish to expose an API for querying previous revisions of documents, you n
 
 `ENABLE_HISTORICAL_API`: Defaults to `false`.
 
-If you enable this, make sure to also configure [visibilities](extending.md#visibility-classes) and [permissions](extending.md#permission-classes) for historical types.
+If you enable this, make sure to also configure [visibilities](../extending/#visibility-classes) and [permissions](../extending/#permission-classes) for historical types.
 
 ## Access Logging
 

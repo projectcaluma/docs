@@ -286,7 +286,7 @@ You can include the `graphql` endpoint into your `urls.py` from `caluma.caluma_c
 
 ## Extensions base classes and decorators
 
-Further information about extensions and their utilities can be found [here](extending.md).
+Further information about extensions and their utilities can be found [here](../extending/).
 
 For completeness, they are listed here:
 

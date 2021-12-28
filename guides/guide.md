@@ -1,13 +1,10 @@
-# Caluma: Guide
+# Getting started
 
-## About this guide
+This guide gives a practical introduction to Caluma. It will show you how to
 
-Goals:
-
-* get a simple app running
-* understand concepts behind caluma
-  * build a form
-  * design a simple workflow
+* get a simple app running,
+* build a form, and
+* design a simple workflow.
 
 ## Installation
 

@@ -1,8 +1,6 @@
-# Validation
+# Form validation
 
-## Javascript Expression Language
-
-Our rationale about using jexl can be found [here](jexl.md).
+Our rationale about using jexl can be found [here](../docs/jexl.md).
 
 ### Variables available for evaluation
 
@@ -37,7 +35,7 @@ Other operators that aren't transforms are also available:
 
 FormatValidator classes can validate input data for answers, based on rules set on the question.
 
-There are a variety of base FormatValidators ready to use. There is also an [extension point](extending.md#formatvalidator-classes) for them.
+There are a variety of base FormatValidators ready to use. There is also an [extension point](../extending/#formatvalidator-classes) for them.
 
 List of built-in base FormatValidators:
 

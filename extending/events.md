@@ -1,8 +1,8 @@
-# Caluma Events
+# Events
 
 Caluma emits events at certain stages of a workflow. These can be used to implement own "side-effects".
 
-In contrast to the `validations` extension, events are emitted AFTER a certain event happened.
+In contrast to the `validations` extension, events are emitted _after_ a certain event happened.
 
 ## Configuration
 
