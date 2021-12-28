@@ -6,8 +6,8 @@ At it's heart, Caluma offers a GraphQL API for forms and workflows. It is typica
 
 The following services are not part of Caluma, but were designed to work well with it:
 
-* Alexandria for document management (REST API)
-* Emeis for user management (REST API)
-* document-merge-service for document generation (REST API)
+* [Alexandria](https://github.com/projectcaluma/alexandria) for document management (REST API)
+* [Emeis](https://github.com/projectcaluma/emeis) for user management (REST API)
+* [document-merge-service](https://github.com/adfinis-sygroup/document-merge-service) for document generation (REST API)
 
-These services are usually deployed in separate containers. Since all services build on a common technology stack (Python/Django), it is also possible to implement a tighter integration by installing them as Django apps to form a single, larger Django application. More details about this can be found in the section _"How can Caluma be integrated in an existing technical landscape?"_.
+These services are usually deployed in separate containers. Since all services build on a common technology stack (Python/Django), it is also possible to implement a tighter integration by installing them as Django apps to form a single, larger Django application. More details about this can be found in the section [how-can-caluma-be-integrated-in-an-existing-technical-landscape.md](how-can-caluma-be-integrated-in-an-existing-technical-landscape.md "mention").
