@@ -13,9 +13,7 @@
 ## Guides
 
 * [Getting started](guides/guide.md)
-* [Workflow](guides/workflow-concepts/README.md)
-  * [Concepts](guides/workflow-concepts/concepts.md)
-  * [Implementation](guides/workflow-concepts/workflow-implementation.md)
+* [Workflow](guides/workflow-concepts.md)
 
 ## Forms
 
