@@ -8,11 +8,13 @@ This guide gives a practical introduction to Caluma. It will show you how to
 
 ## Installation
 
+### Part 1: Caluma API (backend)
+
 To install Caluma, you'll need to have [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed on your system.
 
-Afterwards, create a new directory for your project, copy our [example docker-compose.yml file](https://github.com/projectcaluma/caluma/blob/main/docker-compose.yml) into it and finally run the following command:
+Afterwards, create a new directory for your project and copy our [example docker-compose.yml file](https://github.com/projectcaluma/caluma/blob/main/docker-compose.yml) into it. Before you can start the containers, you'll need to do two more steps:
 
-Per default, Caluma is running with production settings. To bypass the security-related configuration steps needed for a prodoction system, create a new file called `docker-compose.override.yml` with the following content:
+* Per default, Caluma is running with production settings. To bypass the security-related configuration steps needed for a prodoction system, create a new file called `docker-compose.override.yml` with the following content:
 
 ```yml
 version: "3.4"
@@ -22,41 +24,39 @@ services:
       - ENV=development
 ```
 
-Set the UID of the user inside the container::
+* Set the UID of the user inside the container::
 
 ```bash
 echo "UID=$(id --user)" > .env
 ```
 
-Afterwards, start the containers by running
+Now you can start the containers by running
 
 ```bash
 docker-compose up -d
 ```
 
-You can now access [GraphiQL](https://github.com/graphql/graphiql) at [http://localhost:8000/graphql](http://localhost:8000/graphql). We'll use graphiql to interact with the Caluma service in the coming sections.
+After, you should be able to access [GraphiQL](https://github.com/graphql/graphiql) at [http://localhost:8000/graphql](http://localhost:8000/graphql). We'll use GraphiQL to interact with the Caluma service in the coming sections.
 
-Install the ember.js framework. Therefore you need [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/get-npm).
+### Part 2: ember-caluma (frontend)
 
-To install ember.js run
+First, you'll need to [install the Ember.js framework](https://guides.emberjs.com/release/getting-started/quick-start/).
 
-```bash
-npm install -g ember-cli
-```
-
-Create a new ember app
+After, create a new ember app by running
 
 ```bash
 ember new caluma-demo
 ```
 
-Inside the new app install the Ember.js addons for Caluma forms
+Inside the new app install the Ember.js addons for Caluma forms (`ember-form` is responsible for rendering Caluma forms, while `ember-form-builder` offers an UI to create and modify Caluma forms).&#x20;
+
+{% hint style="info" %}
+The following steps are a more detailed version of the [ember-caluma installation docs](https://docs.caluma.io/ember-caluma/docs) - if this guide should not cover a recent change in ember-caluma, please let us know or send a PR!&#x20;
+{% endhint %}
 
 ```bash
 ember install @projectcaluma/ember-form-builder @projectcaluma/ember-form
 ```
-
-## ember-caluma (set up the frontend)
 
 To make `@projectcaluma/ember-form-builder` work a few steps must be followed. The form builder is a [routable engine](http://ember-engines.com) which must be mounted in `app/router.js`:
 
@@ -93,16 +93,7 @@ const App = Application.extend({
 });
 ```
 
-Also, since our form builder needs to customize the apollo service in order to support [fragments on unions and interfaces](https://www.apollographql.com/docs/react/advanced/fragments.html#fragment-matcher), create a new service `app/services/apollo.js` and extend the apollo service with the provided mixin:
-
-```bash
-import ApolloService from "ember-apollo-client/services/apollo";
-import CalumaApolloServiceMixin from "@projectcaluma/ember-core/mixins/caluma-apollo-service-mixin";
-
-export default ApolloService.extend(CalumaApolloServiceMixin, {});
-```
-
-It is crucial to define the options for the apollo service in `config/environment.js`:
+Also, we'll need to tell the apollo client where the GraphQL API can be reached in `config/environment.js`:
 
 ```bash
 module.exports = function(environment) {
@@ -114,7 +105,7 @@ module.exports = function(environment) {
 };
 ```
 
-To use the ember-uikit notification service, it ist important to config some attributes in `ember-cli-build.js`:
+To use the ember-uikit notification service, it ist important to configure some attributes in `ember-cli-build.js`:
 
 ```bash
 module.exports = function(defaults) {
@@ -143,28 +134,17 @@ $modal-z-index: 1;
 @import "@projectcaluma/ember-form-builder";
 ```
 
-To show some texts in the form-builder you have to add translations to `translations/en-us.yaml`. As example like this:
+To show some texts in the form-builder you can configure the locale setting of `ember-intl` to `en` (instead of the default, `en-us`), for example in `application/route.js` (run `ember g route application` if it doesn't exist yet):
 
-```yaml
-caluma:
-  form-builder:
-    global:
-      optional: optional
-      save: Save
-    question:
-      widgetOverrides:
-        powerselect: Powerselect
-    form:
-      all: All petitions
-      new: New petition
-      empty: You don't have any petitions yet.
-      name: Name
-      slug: Slug
-      description: Description
-      isArchived: Archived
-      isPublished: Published
-    notification:
-      form:
-        create:
-          error: Error
+```javascript
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+
+export default class ApplicationRoute extends Route {
+  @service intl;
+
+  beforeModel() {
+    this.intl.setLocale(['en']);
+  }
+}
 ```
