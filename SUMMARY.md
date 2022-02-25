@@ -29,6 +29,7 @@
 * [WorkItem assignments](workflow/workflow-workitem-assignments.md)
 * [Dynamic groups](workflow/dynamic-groups.md)
 * [Dynamic tasks](workflow/dynamic-tasks.md)
+* [Redo pattern](workflow/redo-pattern.md)
 
 ## General
 
