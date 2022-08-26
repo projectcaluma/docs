@@ -29,7 +29,7 @@
 * [WorkItem assignments](workflow/workflow-workitem-assignments.md)
 * [Dynamic groups](workflow/dynamic-groups.md)
 * [Dynamic tasks](workflow/dynamic-tasks.md)
-* [Redo pattern](workflow/redo-pattern.md)
+* [Redo a WorkItem / Reopen a Case](workflow/redo-a-workitem-reopen-a-case.md)
 
 ## General
 

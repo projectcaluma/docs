@@ -1,6 +1,6 @@
 # Workflow entities
 
-The naming and concept of workflow entities is inspired by the [Workflow Patterns Initiative](http://www.workflowpatterns.com).
+The naming and concept of workflow entities is inspired by the [Workflow Patterns Initiative](http://www.workflowpatterns.com/).
 
 **Workflow** defines the structure of a business process. It is built up of tasks which are connected by forward-referencing flows.
 

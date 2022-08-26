@@ -1,6 +1,6 @@
 # Configuration
 
-Caluma is a [12factor app](https://12factor.net) which means that configuration is stored in environment variables. Different environment variable types are explained at [django-environ](https://github.com/joke2k/django-environ#supported-types).
+Caluma is a [12factor app](https://12factor.net/) which means that configuration is stored in environment variables. Different environment variable types are explained at [django-environ](https://github.com/joke2k/django-environ#supported-types).
 
 ## Common
 
@@ -20,7 +20,7 @@ A list of configuration options which you might need to configure to get Caluma 
 
 ## Authentication and authorization
 
-If you want to connect to Caluma you need an [IAM](https://en.wikipedia.org/wiki/Identity\_management) supporting OpenID Connect. If you don't have this available in your environment already, you might want to consider using [Keycloak](https://www.keycloak.org).
+If you want to connect to Caluma you need an [IAM](https://en.wikipedia.org/wiki/Identity\_management) supporting OpenID Connect. If you don't have this available in your environment already, you might want to consider using [Keycloak](https://www.keycloak.org/).
 
 Caluma expects a bearer token to be passed on as [Authorization Request Header Field](https://tools.ietf.org/html/rfc6750#section-2.1)
 
@@ -62,7 +62,7 @@ For cleaning up old entries it's encouraged to use the `cleanup_access_log` mana
 
 In order to make use of Calumas file question and answer, you need to set up a storage provider.
 
-For the time being, only [MinIO](https://min.io) is supported. Other providers may follow.
+For the time being, only [MinIO](https://min.io/) is supported. Other providers may follow.
 
 In the [docker-compose.yml](https://github.com/projectcaluma/caluma/blob/main/docker-compose.yml) you can find an example configuration for a MinIO container.
 

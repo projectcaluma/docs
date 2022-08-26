@@ -28,13 +28,13 @@ Now that we know about the workflow's design, let's imagine this workflow being 
 
 1.  When a new "exam" case is started, Caluma creates a new "fill out exam" work item.
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-1.svg)
+    <img src="../.gitbook/assets/exam-execution-1.svg" alt="Exam case with one work item" data-size="original">
 2.  The exam is filled out, and the corresponding work item is completed. Caluma creates a new work item for the "correct exam" task.
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-2.svg)
+    <img src="../.gitbook/assets/exam-execution-2.svg" alt="Exam case with one work item" data-size="original">
 3.  The exam is corrected, and just as before the corresponding work item is completed. Since there are no more tasks following in the workflow's design, the whole case is marked as "complete".
 
-    ![Exam case with one work item](../.gitbook/assets/exam-execution-3.svg)
+    <img src="../.gitbook/assets/exam-execution-3.svg" alt="Exam case with one work item" data-size="original">
 
 The separation of _Design_ and _Execution_ allows having many "exam" cases in different states at the same time:
 
@@ -46,7 +46,7 @@ Most workflows needed in real applications are more complex than the "exam" work
 
 > **Workflow Patterns and Standardization**
 >
-> Workflow Patterns in software applications are their very own field of research: The [Workflow Patterns initiative](http://www.workflowpatterns.com) categorizes, visualizes and explains known patterns and compares their support in various software applications.
+> Workflow Patterns in software applications are their very own field of research: The [Workflow Patterns initiative](http://www.workflowpatterns.com/) categorizes, visualizes and explains known patterns and compares their support in various software applications.
 >
 > When developing Caluma we try to incorporate as much of this research into our work as possible: The naming of our entities ("Workflow", "Case", "Task", "Work Item") stems directly from the workflow pattern initiative, and the workflow patterns we support are named according to the existing patterns.
 >

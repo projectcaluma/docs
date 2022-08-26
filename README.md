@@ -19,9 +19,9 @@ After installing and configuring those, download [docker-compose.yml](https://gi
 docker-compose up -d
 ```
 
-Schema introspection and documentation is available at [http://localhost:8000/graphql](http://localhost:8000/graphql) and can be accessed using a GraphQL client such as [Altair](https://altair.sirmuel.design). The API allows to query and mutate form and workflow entities which are described below.
+Schema introspection and documentation is available at [http://localhost:8000/graphql](http://localhost:8000/graphql) and can be accessed using a GraphQL client such as [Altair](https://altair.sirmuel.design/). The API allows to query and mutate form and workflow entities which are described below.
 
-Caluma is a [12factor app](https://12factor.net) which means that configuration is stored in environment variables. Different environment variable types are explained at [django-environ](https://github.com/joke2k/django-environ#supported-types).
+Caluma is a [12factor app](https://12factor.net/) which means that configuration is stored in environment variables. Different environment variable types are explained at [django-environ](https://github.com/joke2k/django-environ#supported-types).
 
 You can read more about running and configuring Caluma under [docs/configuration.md](docs/configuration.md)
 
