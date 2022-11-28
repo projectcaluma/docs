@@ -33,8 +33,6 @@
 
 ## General
 
-***
-
 * [Extension points](extending/README.md)
   * [Visibilities](extending/visibilities.md)
   * [Permissions](extending/permissions.md)
