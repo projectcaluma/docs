@@ -16,7 +16,7 @@ Afterwards, create a new directory for your project and copy our [example docker
 
 * Per default, Caluma is running with production settings. To bypass the security-related configuration steps needed for a production system, create a new file called `docker-compose.override.yml` with the following content:
 
-```yml
+```yaml
 version: "3.4"
 services:
   db:
