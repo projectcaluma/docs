@@ -19,6 +19,9 @@ Afterwards, create a new directory for your project and copy our [example docker
 ```yml
 version: "3.4"
 services:
+  db:
+    environment:
+      - POSTGRES_PASSWORD=caluma
   caluma:
     environment:
       - ENV=development
@@ -48,10 +51,10 @@ After, create a new ember app by running
 ember new caluma-demo
 ```
 
-Inside the new app install the Ember.js addons for Caluma forms (`ember-form` is responsible for rendering Caluma forms, while `ember-form-builder` offers an UI to create and modify Caluma forms).&#x20;
+Inside the new app install the Ember.js addons for Caluma forms (`ember-form` is responsible for rendering Caluma forms, while `ember-form-builder` offers an UI to create and modify Caluma forms).
 
 {% hint style="info" %}
-The following steps are a more detailed version of the [ember-caluma installation docs](https://docs.caluma.io/ember-caluma/docs) - if this guide should not cover a recent change in ember-caluma, please let us know or send a PR!&#x20;
+The following steps are a more detailed version of the [ember-caluma installation docs](https://docs.caluma.io/ember-caluma/docs) - if this guide should not cover a recent change in ember-caluma, please let us know or send a PR!
 {% endhint %}
 
 ```bash
