@@ -69,6 +69,32 @@ query foo {
 
 So the above query would return all documents that have a question named "foo" with the value "bar", but exclude all documents from that list where another question "baz" has the value "hello".
 
+#### `hasAnswer` lookup mode
+
+Different types of questions support different types of lookup modes.
+
+Example:
+
+```python
+{hasAnswer: {question: "baz", value: "hello", lookup: ICONTAINS}}
+```
+
+Support matrix:
+
+| Question type          | CONTAINS| EXACT | GT | GTE | ICONTAINS | IN | INTERSECTS  | ISNULL | LT | LTE| STARTSWITH|
+| ---------------------- | ------- | ----- | -- | --- | --------- | -- | ----------- | ------ | -- | -- | --------- |
+| calculated_float       | ❌      | ✅    | ✅ | ✅  | ❌        | ✅ | ❌          | ✅     | ✅ | ✅ | ❌        |
+| choice                 | ❌      | ✅    | ❌ | ❌  | ❌        | ✅ | ❌          | ✅     | ❌ | ❌ | ❌        |
+| date                   | ❌      | ✅    | ✅ | ✅  | ❌        | ✅ | ❌          | ✅     | ✅ | ✅ | ❌        |
+| datetime               | ❌      | ✅    | ✅ | ✅  | ❌        | ✅ | ❌          | ✅     | ✅ | ✅ | ❌        |
+| dynamic_choice         | ❌      | ✅    | ❌ | ❌  | ❌        | ✅ | ❌          | ✅     | ❌ | ❌ | ❌        |
+| dynamic_multiple_choice| ✅      | ✅    | ❌ | ❌  | ❌        | ❌ | ✅          | ✅     | ❌ | ❌ | ❌        |
+| float                  | ❌      | ✅    | ✅ | ✅  | ❌        | ✅ | ❌          | ✅     | ✅ | ✅ | ❌        |
+| integer                | ❌      | ✅    | ✅ | ✅  | ❌        | ✅ | ❌          | ✅     | ✅ | ✅ | ❌        |
+| multiple_choice        | ✅      | ✅    | ❌ | ❌  | ❌        | ❌ | ✅          | ✅     | ❌ | ❌ | ❌        |
+| text                   | ✅      | ✅    | ❌ | ❌  | ✅        | ✅ | ❌          | ✅     | ❌ | ❌ | ✅        |
+| textarea               | ✅      | ✅    | ❌ | ❌  | ✅        | ✅ | ❌          | ✅     | ❌ | ❌ | ✅        |
+
 #### Sorting
 
 The ordering/sorting functionality is also separated from filtering in a syntactic manner. This allows us to do "chained" ordering, for example sorting by field A, and if the values are equal, sorting by field B as well (potentially in another direction).
