@@ -53,7 +53,7 @@ It is recommended to always add `**kwargs` to the receiver functions signature i
 ## List of emitted events
 
 | Event                     | Mutations that can emit this event                                | Arguments                                        |
-| ------------------------- | ----------------------------------------------------------------- | ------------------------------------------------ |
+|---------------------------|-------------------------------------------------------------------|--------------------------------------------------|
 | `pre_create_work_item`    | `CreateWorkItem`, `SaveWorkItem`, `StartCase`, `CompleteWorkItem` | `work_item`, `user`, `context`, `validated_data` |
 | `post_create_work_item`   | `CreateWorkItem`, `SaveWorkItem`, `StartCase`, `CompleteWorkItem` | `work_item`, `user`, `context`                   |
 | `pre_complete_work_item`  | `CompleteWorkItem`                                                | `work_item`, `user`, `context`                   |
@@ -66,6 +66,8 @@ It is recommended to always add `**kwargs` to the receiver functions signature i
 | `post_suspend_work_item`  | `SuspendWorkItem`                                                 | `work_item`, `user`, `context`                   |
 | `pre_resume_work_item`    | `ResumeWorkItem`                                                  | `work_item`, `user`, `context`                   |
 | `post_resume_work_item`   | `ResumeWorkItem`                                                  | `work_item`, `user`, `context`                   |
+| `pre_redo_work_item`      | `RedoWorkItem`                                                    | `work_item`, `user`, `context`                   |
+| `post_redo_work_item`     | `RedoWorkItem`                                                    | `work_item`, `user`, `context`                   |
 | `pre_create_case`         | `SaveCase`, `StartCase`                                           | `case`, `user`, `context`, `validated_data`      |
 | `post_create_case`        | `SaveCase`, `StartCase`                                           | `case`, `user`, `context`                        |
 | `pre_complete_case`       | `CompleteWorkItem`                                                | `case`, `user`, `context`                        |
@@ -76,6 +78,8 @@ It is recommended to always add `**kwargs` to the receiver functions signature i
 | `post_suspend_case`       | `SuspendCase`                                                     | `case`, `user`, `context`                        |
 | `pre_resume_case`         | `ResumeCase`                                                      | `case`, `user`, `context`                        |
 | `post_resume_case`        | `ResumeCase`                                                      | `case`, `user`, `context`                        |
+| `pre_reopen_case`         | `ReopenCase`                                                      | `case`, `user`, `work_items`, `context`          |
+| `post_reopen_case`        | `ReopenCase`                                                      | `case`, `user`, `work_items`, `context`          |
 
 In some cases when one mutation emits multiple events, it is important to know their respective order:
 
