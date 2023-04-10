@@ -77,10 +77,10 @@ Router.map(function() {
 To make `ember-apollo-client` work, we need to pass it as dependency for our engine in `app/app.js`. Additionally, we need to specify `ember-intl` as a dependency so that the the application has access to the addon's translations.
 
 ```bash
-const App = Application.extend({
+export default class App extends Application {
   // ...
 
-  engines: {
+  engines = {
     "@projectcaluma/ember-form-builder": {
       dependencies: {
         services: [
@@ -92,8 +92,8 @@ const App = Application.extend({
         ]
       }
     }
-  }
-});
+  };
+}
 ```
 
 Also, we'll need to tell the apollo client where the GraphQL API can be reached in `config/environment.js`:
@@ -123,7 +123,23 @@ module.exports = function(defaults) {
   });
 ```
 
-Last but not least import `ember-uikit`, `@projectcaluma/ember-form-builder` and `@projectcaluma/ember-form` to apply styling in `app/styles/app.scss`:
+In order to get the frontend to talk to the GraphQL API running on localhost:8000, add the following script to `package.json:`
+
+```
+    "start-proxy": "ember serve --proxy http://localhost:8000",
+```
+
+If you now run `npm run start-proxy` and navigate to [http://localhost:4200/form-builder](http://localhost:4200/form-builder) you might still see the "Welcome page" for the new ember app. To get rid of it, remove the `<WelcomePage />` component in `templates/application.hbs`. After, you should see a first, admittedly not very pretty, glance of the form builder:
+
+<figure><img src="../.gitbook/assets/Screenshot from 2023-04-10 17-10-47.png" alt=""><figcaption></figcaption></figure>
+
+Ember-caluma uses `ember-uikit` for styling, which is based on `SCSS`. To add `SCSS` support to our project, install `ember-cli-sass`:
+
+```
+ember install ember-cli-sass
+```
+
+After, rename `styles/app.css` to `styles/app.scss` and import the necessary stlyes:
 
 ```bash
 // https://github.com/uikit/uikit/blob/master/src/scss/variables-theme.scss
@@ -137,7 +153,7 @@ $modal-z-index: 1;
 @import "@projectcaluma/ember-form-builder";
 ```
 
-To show some texts in the form-builder you can configure the locale setting of `ember-intl` to `en` (instead of the default, `en-us`), for example in `application/route.js` (run `ember g route application` if it doesn't exist yet):
+To get rid of the "Missing translation" labels you can configure the locale setting of `ember-intl` to `en` (instead of the default, `en-us`), for example in `application/route.js` (run `ember g route application` if it doesn't exist yet):
 
 ```javascript
 import Route from '@ember/routing/route';
@@ -151,3 +167,14 @@ export default class ApplicationRoute extends Route {
   }
 }
 ```
+
+Finally, the form builder should be displayed correctly:
+
+<figure><img src="../.gitbook/assets/Screenshot from 2023-04-10 17-19-20.png" alt=""><figcaption></figcaption></figure>
+
+Congratulations - you now have all the basic building blocks to start building out your app! Currently, this is where the "getting started" guide ends - until there is more content, here are some possible next steps:
+
+* In order to familiarize yourself with the form builder, try adding a form and some questions.
+* Set up a new route that lists the available forms (using the `allForms` query)
+* Make the forms selectable and create a `Document` for the selected form
+* Render the document using `<CfContent />`
