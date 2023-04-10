@@ -48,7 +48,7 @@ First, you'll need to [install the Ember.js framework](https://guides.emberjs.co
 After, create a new ember app by running
 
 ```bash
-ember new caluma-demo
+ember new caluma-demo --yarn
 ```
 
 Inside the new app install the Ember.js addons for Caluma forms (`ember-form` is responsible for rendering Caluma forms, while `ember-form-builder` offers an UI to create and modify Caluma forms).
