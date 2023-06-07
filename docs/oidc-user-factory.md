@@ -7,9 +7,9 @@ Therefore, you can define a custom `CALUMA_OIDC_USER_FACTORY`. The setting is a 
 The factory needs to provide the following interface:
 
 ```python
-    def user_factory(token, userinfo=None, introspection=None):
-        # Either `userinfo` or `introspection` is filled with a dict
-        # with information about the user.
+    def user_factory(token, claims=None):
+        # `claims` is filled with a dict with information about the user fetched from
+        # the OIDC-providers `userinfo` endpoint.
         return SomeOIDCUserObject(...)
 ```
 

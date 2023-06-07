@@ -28,7 +28,7 @@ Caluma expects a bearer token to be passed on as [Authorization Request Header F
 * `OIDC_GROUPS_CLAIM`: Name of claim to be used to represent groups (default: caluma\_groups)
 * `OIDC_USERNAME_CLAIM`: Name of claim to be used to represent the username (default: sub)
 * `OIDC_BEARER_TOKEN_REVALIDATION_TIME`: Time in seconds before bearer token validity is verified again. For best security token is validated on each request per default. It might be helpful though in case of slow Open ID Connect provider to cache it. It uses [cache](configuration.md#cache) mechanism for memorizing userinfo result. Number has to be lower than access token expiration time. (default: 0)
-* `CALUMA_OIDC_USER_FACTORY`: User object factory (default: `caluma.caluma_user.models.OIDCUser`). Use it to provide a custom OIDC user object. The factory is expected to accept a mandatory `token` parameter and two optional parameters `userinfo` and `introspection`. Only one of them will be filled, depending on which OIDC endpoint the user information comes from.
+* `CALUMA_OIDC_USER_FACTORY`: User object factory (default: `caluma.caluma_user.models.OIDCUser`). Use it to provide a custom OIDC user object. The factory is expected to accept a mandatory `token` parameter and one optional parameter `claims`.
 
 ## Cache
 
@@ -82,20 +82,6 @@ Caluma only handles metadata about files, not the files itself. When saving a `F
 The same goes for retrieving files. Caluma will respond with a presigned `downloadUrl` for the client to directly download the file from the storage provider.
 
 In case you run HTTPS in your local development environment, you might have a self-signed certificate. The Minio client by default verifies the TLS certificates, so would fail in this case. You can set `MINIO_DISABLE_CERT_CHECKS` to `true` to avoid this. Note: This setting only works if you also set `DEBUG` to `true` as well.
-
-## Client tokens
-
-If you want to use additional services that need to talk to caluma (e.g. [caluma-interval](https://github.com/projectcaluma/caluma-interval)), you need to have an additional OIDC-client with the `token_introspection` scope key.
-
-Following environment variables need to be set for caluma:
-
-* `OIDC_INTROSPECT_ENDPOINT`: introspect endpoint from the OIDC-provider
-* `OIDC_INTROSPECT_CLIENT_ID`: ID of the OIDC-client
-* `OIDC_INTROSPECT_CLIENT_SECRET`: Secret of the OIDC-client
-
-Some OIDC implementations (e.g. keycloak), allow for querying the `userinfo` endpoint with a client token. In that case the `introspection` endpoint is never called.
-
-The attribute `claims_source` on `OIDCUser` instances indicates the source of the claims.
 
 ## uWSGI defaults
 
