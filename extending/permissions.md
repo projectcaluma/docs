@@ -49,7 +49,7 @@ If your permissions depend on the content of the mutation, you can access those 
 ```python
 class CustomPermission(BasePermission):
     @permission_for(SaveTextQuestionInput)
-    def hsa_question_save_permission(self, mutation, info):
+    def has_question_save_permission(self, mutation, info):
         params = mutation.get_params(info)
         # hypothetical permission: disallow saving
         # questions whose label contains the word "blah"
