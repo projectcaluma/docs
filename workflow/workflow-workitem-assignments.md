@@ -30,7 +30,7 @@ For `WorkItem`s related to a `multipleInstanceTask`, it's possible to manually p
 
 ## GroupJexl
 
-The `GroupJexl` is used for avaluating the correct groups for setting `addressed_groups` and `controlling_groups`.
+The `GroupJexl` is used for evaluating the correct groups for setting `addressed_groups` and `controlling_groups`.
 
 The simplest form of a valid GroupJexl is a static list of groups:
 
