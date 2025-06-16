@@ -35,6 +35,6 @@ For profiling you can use `./manage.py runprofileserver`. See [docker-compose.ov
 
 ## License
 
-Code released under the [GPL-3.0-or-later license](https://github.com/projectcaluma/caluma/blob/main/LICENSE/README.md).
+Code released under the [GPL-3.0-or-later license](https://github.com/projectcaluma/caluma/blob/main/LICENSE).
 
 For further information on our license choice, you can read up on the [corresponding GitHub issue](https://github.com/projectcaluma/caluma/issues/751#issuecomment-547974930).
