@@ -38,6 +38,7 @@
   * [Permissions](extending/permissions.md)
   * [Validations](extending/validations.md)
   * [Events](extending/events.md)
+  * [Format Validators](general/extending/format-validators.md)
 * [Extras](docs/README.md)
   * [Commands](docs/commands.md)
   * [Configuration](docs/configuration.md)

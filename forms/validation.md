@@ -35,9 +35,4 @@ Other operators that aren't transforms are also available:
 
 FormatValidator classes can validate input data for answers, based on rules set on the question.
 
-There are a variety of base FormatValidators ready to use. There is also an [extension point](../extending/#formatvalidator-classes) for them.
-
-List of built-in base FormatValidators:
-
-* email
-* phone-number
+There are some basic FormatValidators ready to use (see "base\_format\_validators" in [format\_validators.py](https://github.com/projectcaluma/caluma/blob/main/caluma/caluma_form/format_validators.py). There is also an [extension point](../general/extending/format-validators.md) for them.
