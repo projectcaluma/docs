@@ -23,6 +23,7 @@ For more complex validators you might prefer not to use regex - in this case you
 
 * the **value** that is being validated, and
 * the **document** as context for more elaborate validations
+* the **question** being answered
 
 Example:
 
@@ -36,6 +37,6 @@ class CustomFormatValidator(BaseFormatValidator):
     error_msg = _("Not an even date")
 
     @classmethod
-    def is_valid(cls, value, document):
+    def is_valid(cls, value, document, question):
         return value.day() % 2 == 0
 ```
