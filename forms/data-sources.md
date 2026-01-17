@@ -37,6 +37,14 @@ For the label, it's possible to use a dict with translated values.
 
 Note: If the labels returned from`get_data()` depend on the current user's language, you need to return a `dict` with the language code as keys instead of translating the value yourself. Returning already translated values is not supported, as it would break caching and validation.
 
+### `on_copy`-method
+
+When a an answer of type TYPE_DYNAMIC_CHOICE or TYPE_DYNAMIC_MULTIPLE_CHOICE gets copied the meaning of the slug and label of the dynamic option could potentially be changed when the datasource it's data changes. During the answer copy process the linked datasource it's on_copy method will be called to decide the desired result.
+
+- return the same slug,label tuple to not perform any change (default behavior)
+- return an altered slug or(/and) label to change the answer value
+- return a None value for the slug, to discard the answer value
+
 #### Arguments
 
 * `user`: The OIDC user object for the request
