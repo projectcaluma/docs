@@ -13,10 +13,10 @@ NOTE: We recommend using Caluma as a dedicated service. However, it is possible 
 * docker
 * docker-compose
 
-After installing and configuring those, download [docker-compose.yml](https://github.com/projectcaluma/caluma/blob/main/docker-compose.yml) and run the following command:
+After installing and configuring those, download the [compose.yml](https://github.com/projectcaluma/caluma/blob/main/compose.yaml) and run the following command:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Schema introspection and documentation is available at [http://localhost:8000/graphql](http://localhost:8000/graphql) and can be accessed using a GraphQL client such as [Altair](https://altair.sirmuel.design/). The API allows to query and mutate form and workflow entities which are described below.
