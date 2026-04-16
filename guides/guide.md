@@ -12,9 +12,9 @@ This guide gives a practical introduction to Caluma. It will show you how to
 
 To install Caluma, you'll need to have [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed on your system.
 
-Afterwards, create a new directory for your project and copy our [example docker-compose.yml file](https://github.com/projectcaluma/caluma/blob/main/docker-compose.yml) into it. Before you can start the containers, you'll need to do two more steps:
+Afterwards, create a new directory for your project and copy our [example docker compose.yaml file](https://github.com/projectcaluma/caluma/blob/main/compose.yaml) into it. Before you can start the containers, you'll need to do two more steps:
 
-* Per default, Caluma is running with production settings. To bypass the security-related configuration steps needed for a production system, create a new file called `docker-compose.override.yml` with the following content:
+* Per default, Caluma is running with production settings. To bypass the security-related configuration steps needed for a production system, create a new file called `compose.override.yaml` with the following content:
 
 ```yaml
 version: "3.4"
@@ -36,7 +36,7 @@ echo "UID=$(id --user)" > .env
 Now you can start the containers by running
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 After, you should be able to access [GraphiQL](https://github.com/graphql/graphiql) at [http://localhost:8000/graphql](http://localhost:8000/graphql). We'll use GraphiQL to interact with the Caluma service in the coming sections.
