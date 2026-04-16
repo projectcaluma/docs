@@ -31,7 +31,7 @@ Set environment variable `ENV` to `dev` to enable debugging capabilities. Don't 
 
 This enables [Django Debug Middleware](https://docs.graphene-python.org/projects/django/en/latest/debug/).
 
-For profiling you can use `./manage.py runprofileserver`. See [docker-compose.override.yml](https://github.com/projectcaluma/caluma/blob/main/docker-compose.override.yml) for an example.
+For profiling you can use `./manage.py runprofileserver`. See [compose.override.yaml](https://github.com/projectcaluma/caluma/blob/main/compose.override.yaml) for an example.
 
 ## License
 
